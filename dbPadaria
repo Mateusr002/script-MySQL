@@ -1,0 +1,17 @@
+create database dbPadaria;
+
+use dbPadaria;
+
+create table tbfuncionarios(
+codfunc int not null auto_increment,
+nome varchar(200) not null,
+email varchar(200) not null,
+cpf char(14) not null unique,
+salario decimal(9,2) not null default 0.0 check(salario >= 0),
+sexo char(1) default 'F' check(sexo in('F','M')),
+ctps char(6) default '000000',
+logradouro varchar(200),
+numero char(10),
+bairro varchar(200),
+cep char(9)
+);
